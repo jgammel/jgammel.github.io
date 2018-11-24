@@ -14,21 +14,8 @@ function setup() {
   fft.setInput(mic);
 }
 
-// function draw() {
-//   background(200);
-
-//   // Get the overall volume (between 0 and 1.0)
-//   var vol = mic.getLevel();
-//   fill(127);
-//   stroke(0);
-
-//   // Draw an ellipse with height based on volume
-//   var h = map(vol, 0, 1, height, 0);
-//   ellipse(width/2, h - 25, 50, 50);
-// }
-
 function draw() {
-   background(200);
+   background(300);
 
    var spectrum = fft.analyze();
 
@@ -42,25 +29,25 @@ function draw() {
      if(spectrum[i] > 0){
       switch(i % 7){
         case 0:
-          console.log("red");
+          background(255,0,0);
           break;
         case 1:
-          console.log("orange");
+          background(255,115,62);
            break;
         case 2:
-          console.log("yellow");
+          background(255,214,62);
           break;
         case 3:
-          console.log("green");
+          background(0,220,62);
           break;
         case 4:
-          console.log("blue");
+          background(0,148,234);
           break;
         case 5:
-          console.log("violet");
+          background(108,0,234);
           break;
         case 6:
-          console.log("pink");
+          background(255,108,234);
           break;
         default:
           console.log("unknown tone");
